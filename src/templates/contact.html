@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block head_title %} Contact || {{block.super}} {% endblock head_title %}
+
+{% block content %}
+<p>
+Contact
+{% if bool_var1 %}
+The temperature in home2 is {{num}}!
+{% endif %}
+</p>
+{% endblock content %}

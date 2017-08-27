@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block head_title %} Lost Pet || {{block.super}} {% endblock head_title %}
+{% block content %}
+<h1> lost Pet List </h1>
+
+<div class="container">    
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Pet's Name</th>
+        <th>Type</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+
+{% for obj in object_list %}
+  <tr>
+        <td>{{obj.name}} </td>
+        <td>{{obj.type_pet}} </td>
+        <td>{{obj.age}} </td>
+      </tr>
+
+{% endfor %}
+
+   </tbody>
+  </table>
+</div>
+
+{% endblock content %}
+
+
+
+    
+  
