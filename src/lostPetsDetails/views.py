@@ -45,18 +45,18 @@ class LostPetListView(ListView):
 
 import xml.etree.ElementTree as ET
 #list all stocks or create a new one #stocks/FB
-class StockList (APIView):
-	def get(self, request):
-		r = requests.get('http://aip-rest.appspot.com/api/token/12673341')
+#class StockList (APIView):
+	#def get(self, request):
+		#r = requests.get('http://aip-rest.appspot.com/api/token/12673341')
 
-		assert response.status_code == 200
+		#assert response.status_code == 200
 
-		for repo in r.json():
-    		print ('{}{}'.format(repo['studentName'],repo['value']))
+		#for repo in r.json():
+    	#	print ('{}{}'.format(repo['studentName'],repo['value']))
 
-		stocks = Stock.objects.all()
-		serializer = StockSerializer(stocks)
-		return Response(serializer.data)
+		#stocks = Stock.objects.all()
+		#serializer = StockSerializer(stocks)
+		#return Response(serializer.data)
 	
 #	def post(self):
 #		pass

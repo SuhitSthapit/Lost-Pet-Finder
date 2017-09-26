@@ -37,5 +37,5 @@ urlpatterns = [
     #url(r'^contact/$', ContactView.as_view()),
     url(r'^contact/$', ContactView.as_view()),
 
-    url(r'^stocks/', views.StockList.as_view()),
+    #url(r'^stocks/', views.StockList.as_view()),
 ]
