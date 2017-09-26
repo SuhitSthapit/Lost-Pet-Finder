@@ -16,13 +16,26 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
-from lostPetsDetails.views import HomeView, ContactView,lostPet_listview
+from lostPetsDetails.views import (
+    HomeView, 
+    ContactView,
+    lostPet_listview,
+    LostPetListView
+)
+
+from rest_framework.urlpatterns import format_suffix_patterns
+from lostPetsDetails import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view()),
-    url(r'^lostpet/$', lostPet_listview),
+    #url(r'^lostpet/$', lostPet_listview),
+    url(r'^lostpet/$', LostPetListView.as_view()),
+    url(r'^lostpet/(?P<slug>\w+)/$', LostPetListView.as_view()),
     url(r'^about/$', TemplateView.as_view(template_name = "about.html")),
     #url(r'^contact/$', contact),
     #url(r'^contact/$', ContactView.as_view()),
     url(r'^contact/$', ContactView.as_view()),
+
+    url(r'^stocks/', views.StockList.as_view()),
 ]

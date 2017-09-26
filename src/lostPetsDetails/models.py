@@ -9,3 +9,15 @@ class LostPet (models.Model):
 
 	def __str__(self):
 		return self.name   #objects are named as name of the pet in admin
+
+
+
+class Stock (models.Model):
+	studentId     = models.IntegerField(default='0')
+	studentName = models.CharField(max_length=100, null=True, blank=True)
+	value    = models.CharField(max_length=100, null=True, blank=True)
+	
+
+	def __str__(self):
+		return self.studentId   
+
